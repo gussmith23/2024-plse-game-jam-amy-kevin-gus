@@ -18,6 +18,7 @@
     border: 1px solid #000000;
     font-family: 'ponderosa';
     color: #000000;
+    background-image: url("title.png");
   }
 
   .page {
@@ -32,10 +33,16 @@
 
     letter-spacing: 10px;
     font-size: 20px;
+
+    background-color: white;
+
+    /* start with page hidden */
+    display: none;
   }
 
   .word {
     user-select: none;
+    position: relative;
   }
 
   .word:hover {
@@ -47,10 +54,28 @@
     color: #000000;
 
   }
+
+  .wordCanvas {
+    position: absolute;
+    top: -10%;
+    left: -2%;
+    width: 102%;
+    height: 130%;
+  }
+
+  .startButton {
+    position: absolute;
+    height: 97px;
+    width: 170px;
+    left: 616px;
+    top: 250px;
+  }
 </style>
 
 <body>
   <div class="gameWindow">
+
+    <div class="startButton"></div>
 
 
     <div class="page">
@@ -67,7 +92,7 @@
       &nbsp;&nbsp;
       1. The
       <span class="word">
-        <!-- <canvas class="wordCanvas"></canvas> -->
+        <canvas class="wordCanvas"></canvas>
         Maritime Branch</span>
       of SOD is
       extremely interested in the
@@ -79,11 +104,7 @@
   </div>
 </body>
 
-<script>
-  $(".word").click(function () {
-    $(this).toggleClass('redacted');
-  });
-</script>
+<script src="script.js"></script>
 
 
 </html>
