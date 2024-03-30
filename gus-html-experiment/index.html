@@ -1,76 +1,8 @@
 <html>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"
-  integrity="sha512-9ex1Kp3S7uKHVZmQ44o5qPV6PnP8/kYp8IpUHLDJ+GZ/qpKAqGgEEH7rhYlM4pTOSs/WyHtPubN2UePKTnTSww=="
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="style.css">
 
-<style>
-  @font-face {
-    font-family: "ponderosa";
-    src: url("ponde___.ttf");
-  }
-
-  .gameWindow {
-    width: 800px;
-    height: 600px;
-    background-color: #ffffff;
-    border: 1px solid #000000;
-    font-family: 'ponderosa';
-    color: #000000;
-    background-image: url("title.png");
-  }
-
-  .page {
-    width: 680px;
-    height: 480px;
-    position: absolute;
-    left: 50px;
-    top: 50px;
-    border: 2px solid #000000;
-    padding: 20px;
-    line-height: 40px;
-
-    letter-spacing: 10px;
-    font-size: 20px;
-
-    background-color: white;
-
-    /* start with page hidden */
-    display: none;
-  }
-
-  .word {
-    user-select: none;
-    position: relative;
-  }
-
-  .word:hover {
-    outline: 5px dotted red;
-  }
-
-  .redacted {
-    background-color: #000000;
-    color: #000000;
-
-  }
-
-  .wordCanvas {
-    position: absolute;
-    top: -10%;
-    left: -2%;
-    width: 102%;
-    height: 130%;
-  }
-
-  .startButton {
-    position: absolute;
-    height: 97px;
-    width: 170px;
-    left: 616px;
-    top: 250px;
-  }
-</style>
 
 <body>
   <div class="gameWindow">
