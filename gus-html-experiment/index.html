@@ -34,6 +34,10 @@
     font-size: 20px;
   }
 
+  .word {
+    user-select: none;
+  }
+
   .word:hover {
     outline: 5px dotted red;
   }
@@ -50,9 +54,10 @@
 
 
     <div class="page">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna
-      aliqua. Maecenas accumsan lacus vel facilisis volutpat est velit egestas. Volutpat ac tincidunt vitae semper quis
+      MEMORANDUM
+      
+      aliqua. <span class="word">Maecenas</span> accumsan lacus vel facilisis volutpat est velit egestas. Volutpat ac
+      tincidunt vitae semper quis
       lectus nulla at volutpat.
     </div>
 
@@ -61,8 +66,6 @@
 </body>
 
 <script>
-  $(".page").lettering('words').children('span').addClass('word');
-
   $(".word").click(function () {
     $(this).toggleClass('redacted');
   });
