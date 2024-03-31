@@ -132,16 +132,16 @@
 .stinkButtDoc {
 
   /* text */
-  line-height: 40px;
-  letter-spacing: 10px;
-  font-size: 20px;
+  line-height: 35px;
+  letter-spacing: 4px;
+  font-size: 18px;
   font-family: 'ponderosa';
   color: #000000;
 
 
   /* shape/size/location */
   width: 680px;
-  height: 480px;
+  height: 385px;
   position: absolute;
   left: 50px;
   top: 50px;
