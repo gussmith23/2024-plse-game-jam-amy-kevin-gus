@@ -87,6 +87,31 @@
   display: none;
 }
 
+.genericDoc {
+  
+  /* text */
+  line-height: 40px;
+  letter-spacing: 10px;
+  font-size: 20px;
+  font-family: 'ponderosa';
+  color: #000000;
+
+
+  /* shape/size/location */
+  width: 680px;
+  height: 480px;
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  border: 2px solid #000000;
+  padding: 20px;
+
+  background-color: white;
+
+  /* start with page hidden */
+  display: none;
+}
+
 .word {
   user-select: none;
   position: relative;

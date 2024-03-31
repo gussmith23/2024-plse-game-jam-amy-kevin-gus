@@ -6,6 +6,20 @@ var redactAudio = new Audio('scribble1.m4a');
 var stampAudio = new Audio('stamp.m4a');
 var currentCompleted = true;
 
+var progression = {
+  "dolphin": "soviet"
+}
+
+for (const [start, end] of Object.entries(progression)) {
+  $(`#${start}`).click(function () {
+    if ($(".stamp").css('display') != 'none') {
+      $(this).hide();
+      $(".stamp").hide();
+      $(`#${end}`).show();
+    }
+  })
+}
+
 $(".startButton").click(function () {
   $(this).hide();
   $(".memoScreen").show();
@@ -49,6 +63,8 @@ makeRedactable($(".stinkButtRedactable")[0]);
 //   $(this).append("hi");
 //   // $(this).append("<canvas class='wordCanvas'></canvas>");
 // });
+
+makeRedactable($("#sovietRedactable")[0]);
 
 $(".wordCanvas").click(function () {
 
@@ -100,7 +116,6 @@ function stamp() {
 }
 
 $(".stinkButtDoc").click(function () {
-  console.log("done");
   if ($(".stamp").css('display') != 'none') {
     $(".stamp").hide();
     $(".stinkButtDoc").hide();
