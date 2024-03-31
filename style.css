@@ -22,6 +22,44 @@
   height: 100%;
 }
 
+.memo {
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  border: 2px solid #000000;
+  padding: 20px;
+  line-height: 40px;
+  background-color: white;
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.memoScreen {
+  /* start with memo hidden */
+  display: none;
+  
+}
+
+.stickynote {
+  width: 200px;
+  height: 80px;
+  position: absolute;
+  right: 25px;
+  bottom: 55px;
+  border: 2px solid #000000;
+  padding: 20px;
+  line-height: 30px;
+  background-color: white;
+  z-index: 100;
+
+  font-family: "Kalam", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .page {
   width: 680px;
   height: 480px;
@@ -79,8 +117,8 @@
 
 .endButton {
   position: absolute;
-  height: 20px;
-  width: 20px;
+  /* height: 20px;
+  width: 20px; */
   left: 0;
   top: 0;
   border: 2px solid red;
@@ -88,8 +126,8 @@
 
 .stampButton {
   position: absolute;
-  height: 20px;
-  width: 20px;
+  /* height: 20px;
+  width: 20px; */
   left: 0;
   top: 20px;
   border: 2px solid rgb(25, 0, 255);

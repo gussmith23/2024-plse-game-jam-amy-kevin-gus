@@ -7,7 +7,8 @@ var stampAudio = new Audio('stamp.m4a');
 
 $(".startButton").click(function () {
   $(this).hide();
-  $(".page").show();
+  $(".memoScreen").show();
+  // $(".page").show();
 });
 
 $(".wordCanvas").click(function () {
@@ -38,6 +39,11 @@ $(".wordCanvas").click(function () {
   strike();
   strike();
   strike();
+});
+
+$(".memoScreen").click(function () {
+  $(".memo").hide();
+  $(".page").show();
 });
 
 function endGame() {
