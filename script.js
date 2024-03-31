@@ -2,7 +2,8 @@
 //   $(this).toggleClass('redacted');
 // });
 
-var audio = new Audio('scribble1.m4a');
+var redactAudio = new Audio('scribble1.m4a');
+var stampAudio = new Audio('stamp.m4a');
 
 $(".startButton").click(function () {
   $(this).hide();
@@ -11,7 +12,7 @@ $(".startButton").click(function () {
 
 $(".wordCanvas").click(function () {
 
-  audio.play();
+  redactAudio.play();
 
 
   // As long as we're setting the canvas width/height to a percentage from css,
@@ -46,3 +47,10 @@ function endGame() {
 }
 
 $(".endButton").click(endGame);
+
+function stamp() {
+  stampAudio.play();
+  $(".stamp").show();
+}
+
+$(".stampButton").click(stamp);
