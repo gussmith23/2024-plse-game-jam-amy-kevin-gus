@@ -43,7 +43,8 @@ $(".wordCanvas").click(function () {
 
 $(".memoScreen").click(function () {
   $(".memo").hide();
-  $(".page").show();
+  // $(".dolphinDoc").show();
+  $(".stinkButtDoc").show();
 });
 
 function endGame() {
