@@ -1,50 +1,53 @@
 <html>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<link rel="stylesheet" href="style.css">
+  <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="style.css">
 
+  <body>
+    <!-- Represents the main window of the game. Everything should be in here. -->
+    <div class="gameWindow">
 
-<body>
-<!-- Represents the main window of the game. Everything should be in here. -->
-<div class="gameWindow">
-
-<!-- Represents the "main screen": the start screen, plus the documents that get
+      <!-- Represents the "main screen": the start screen, plus the documents that get
 overlayed. -->
-<div class="mainScreen">
-  <div class="startButton"></div>
-  <div class="endButton"></div>
-  <div class="page">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7 February 1964
-    <br>
-    <br>
-    MEMORANDUM FOR:<br>
-    &nbsp;&nbsp; Life Sciences Division
-    <br>
-    SUBJECT:<br>
-    &nbsp;&nbsp; Dolphins
-    <br>
-    <br>
-    &nbsp;&nbsp;
-    1. The
-    <span class="word">
-      <canvas class="wordCanvas"></canvas>
-      Maritime Branch</span>
-    of SOD is
-    extremely interested in the
-    proposed work
-    on the training of Dolphins.
-  </div>
-</div>
+      <div class="mainScreen">
+        <div class="startButton"></div>
+        <div class="endButton"></div>
+        <div class="page">
+          <!-- The stamp that'll be stamped onto the completed document -->
+          <div></div>
 
-<!-- Represents the end screen. -->
-<div class="endScreen">
-</div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7
+          February 1964
+          <br>
+          <br>
+          MEMORANDUM FOR:<br>
+          &nbsp;&nbsp; Life Sciences Division
+          <br>
+          SUBJECT:<br>
+          &nbsp;&nbsp; Dolphins
+          <br>
+          <br>
+          &nbsp;&nbsp;
+          1. The
+          <span class="word">
+            <canvas class="wordCanvas"></canvas>
+            Maritime Branch</span>
+          of SOD is
+          extremely interested in the
+          proposed work
+          on the training of Dolphins.
+        </div>
+      </div>
 
+      <!-- Represents the end screen. -->
+      <div class="endScreen">
+      </div>
 
-</div>
+    </div>
 
-</body>
+  </body>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </html>
