@@ -47,16 +47,18 @@
   width: 200px;
   height: 80px;
   position: absolute;
-  right: 25px;
-  bottom: 55px;
+  right: 5px;
+  bottom: -100px;
   border: 2px solid #000000;
   padding: 20px;
   line-height: 30px;
   background-color: white;
-  /* z-index: 4; */
+  z-index: 4;
 
   font-family: "Kalam", cursive;
+  font-size: 16;
   font-weight: 400;
+  line-height: 120%;
   font-style: normal;
 }
 

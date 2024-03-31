@@ -4,6 +4,7 @@
 
 var redactAudio = new Audio('scribble1.m4a');
 var stampAudio = new Audio('stamp.m4a');
+var currentCompleted = true;
 
 $(".startButton").click(function () {
   $(this).hide();
@@ -59,5 +60,14 @@ function stamp() {
   stampAudio.play();
   $(".stamp").show();
 }
+
+$(".stinkButtDoc").click(function () {
+  console.log("done");
+  if ($(".stamp").css('display') != 'none') {
+    $(".stamp").hide();
+    $(".stinkButtDoc").hide();
+    $(".dolphinDoc").show();
+  }
+});
 
 $(".stampButton").click(stamp);
