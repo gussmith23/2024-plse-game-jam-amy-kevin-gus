@@ -38,3 +38,11 @@ $(".wordCanvas").click(function () {
   strike();
   strike();
 });
+
+function endGame() {
+  $(".mainScreen").hide();
+  $(".mainScreen").children().hide();
+  $(".endScreen").show();
+}
+
+$(".endButton").click(endGame);
