@@ -7,7 +7,11 @@ var stampAudio = new Audio('stamp.m4a');
 
 $(".startButton").click(function () {
   $(this).hide();
-  $(".page").show();
+
+  // which level is first?
+  // $(".dolphinDoc").show();
+  $(".stinkButtDoc").show();
+
 });
 
 $(".wordCanvas").click(function () {
