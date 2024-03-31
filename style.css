@@ -3,6 +3,11 @@
   src: url("ponde___.ttf");
 }
 
+@font-face {
+  font-family: "stamped";
+  src: url("stamped.TTF");
+}
+
 .gameWindow {
   width: 800px;
   height: 600px;
@@ -16,7 +21,7 @@
   position: relative;
   background-image: url("title.png");
   width: 100%;
-    height: 100%;
+  height: 100%;
 }
 
 .page {
@@ -68,6 +73,7 @@
   left: 616px;
   top: 250px;
 }
+
 .endButton {
   position: absolute;
   height: 20px;
@@ -85,6 +91,7 @@
   top: 20px;
   border: 2px solid rgb(25, 0, 255);
 }
+
 .endScreen {
   display: none;
   background-image: url("ending-screen.png");
@@ -92,6 +99,7 @@
   width: 100%;
   position: relative;
 }
+
 .stamp {
   position: absolute;
   height: 100px;
