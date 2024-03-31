@@ -29,8 +29,21 @@ function stamp() {
 $(".stampButton").click(stamp);
 
 
-$(".stinkButtRedactable").lettering('words').children('span').addClass('word');
-$(".stinkButtRedactable > .word").append("<canvas class='wordCanvas'></canvas>");
+function makeRedactable(element) {
+
+  function wrapInRedactableSpan(text) {
+    if (text === "<br>") {
+      return "<br>";
+    }
+    return "<span class='word'><canvas class='wordCanvas'></canvas>" + text + "</span>";
+  }
+  element.innerHTML = element.innerHTML.trim().split(/\s+/).map(wrapInRedactableSpan).join(" ");
+}
+
+// $(".stinkButtRedactable").lettering('words').children('span').addClass('word');
+console.assert($(".stinkButtRedactable").length === 1);
+makeRedactable($(".stinkButtRedactable")[0]);
+// $(".stinkButtRedactable > .word").append("<canvas class='wordCanvas'></canvas>");
 // $(".stinkButtRedactable > .word").each(_ => {
 //   console.log($(this));
 //   $(this).append("hi");
