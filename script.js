@@ -12,6 +12,31 @@ $(".startButton").click(function () {
   // $(".page").show();
 });
 
+
+function endGame() {
+  $(".mainScreen").hide();
+  $(".mainScreen").children().hide();
+  $(".endScreen").show();
+}
+
+$(".endButton").click(endGame);
+
+function stamp() {
+  stampAudio.play();
+  $(".stamp").show();
+}
+
+$(".stampButton").click(stamp);
+
+
+$(".stinkButtRedactable").lettering('words').children('span').addClass('word');
+$(".stinkButtRedactable > .word").append("<canvas class='wordCanvas'></canvas>");
+// $(".stinkButtRedactable > .word").each(_ => {
+//   console.log($(this));
+//   $(this).append("hi");
+//   // $(this).append("<canvas class='wordCanvas'></canvas>");
+// });
+
 $(".wordCanvas").click(function () {
 
   redactAudio.play();
