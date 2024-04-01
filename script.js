@@ -7,7 +7,7 @@ var stampAudio = new Audio('stamp.m4a');
 var currentCompleted = true;
 
 var progression = {
-  "dolphin": "soviet"
+  "soviet": "dolphin"
 }
 
 for (const [start, end] of Object.entries(progression)) {
@@ -119,7 +119,7 @@ $(".stinkButtDoc").click(function () {
   if ($(".stamp").css('display') != 'none') {
     $(".stamp").hide();
     $(".stinkButtDoc").hide();
-    $(".dolphinDoc").show();
+    $("#soviet").show();
   }
 });
 
