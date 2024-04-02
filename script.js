@@ -4,6 +4,7 @@
 
 var redactAudio = new Audio('scribble1.m4a');
 var stampAudio = new Audio('stamp.m4a');
+var paperAudio = new Audio('paper.mp3');
 var currentCompleted = true;
 
 var progression = {
@@ -102,8 +103,7 @@ $(".wordCanvas").click(function () {
 
 $(".memoScreen").click(function () {
   $(".memo").hide();
-  // $(".dolphinDoc").show();
-  $(".stinkButtDoc").show();
+  stageShowNoteFromManager();
 });
 
 function endGame() {
@@ -141,3 +141,91 @@ $(".stinkButtDoc").click(function () {
 });
 
 $(".stampButton").click(stamp);
+
+
+// This stage displays the note from the manager.
+function stageShowNoteFromManager() {
+
+  $(".stinkButtStickyNote").show();
+  $(".stinkButtStickyNoteButton").click(stageStinkButt);
+
+}
+
+function stageStinkButt() {
+  $(".stinkButtDoc").show();
+  $(".stinkButtStickyNoteButton").hide();
+  $(".stinkButtStickyNote").css('left', '544px');
+  $(".stinkButtStickyNote").css('top', '37px');
+
+
+  var wordsList = $(".stinkButtRedactable").children();
+  function redact(idx) {
+    $(wordsList[idx]).toggleClass('redacted');
+  }
+
+  redact(2);
+  redact(3);
+  redact(4);
+  redact(7);
+  redact(8);
+  redact(9);
+  redact(10);
+  redact(13);
+  redact(14);
+  redact(15);
+  redact(18);
+  redact(19);
+  redact(20);
+  redact(21);
+  redact(22);
+  redact(23);
+  redact(26);
+  redact(27);
+  redact(28);
+  redact(29);
+  redact(32);
+  redact(33);
+  redact(34);
+  redact(35);
+  redact(36);
+
+}
+
+$(".stinkButtUnredact").click(() => trash($(".stinkButtDoc")));
+
+// Unredact everything under the given element.
+function unredactAll(element) {
+  // Remove redacted class.
+  $(element).find(".word").removeClass('redacted');
+  // Clear canvas.
+  $(element).find(".wordCanvas").each(function () {
+    const ctx = $(this)[0].getContext("2d");
+    ctx.clearRect(0, 0, $(this)[0].width, $(this)[0].height);
+  });
+}
+
+// "Trash" an element and make it reappear.
+function trash(element) {
+  paperAudio.play();
+  const oldTop = $(element).css('top');
+  $(element).css('transition', 'top .25s ease');
+  $(element).css('top', '2000px');
+  setTimeout(() => {
+    unredactAll(element);
+    $(element).css('top', oldTop);
+  }, 250);
+}
+
+function stampDoc(doc) {
+  stampAudio.play();
+  $(doc).find(".stamp").show();
+  $(doc).find(".next").show();
+}
+
+$(".stinkButtSubmit").click(() => stampDoc($(".stinkButtDoc")));
+
+$(".stinkButtDoc .next").click(() => {
+  $(".stinkButtDoc").hide();
+  $(".stinkButtStickyNote").hide();
+  $("#soviet").show();
+});

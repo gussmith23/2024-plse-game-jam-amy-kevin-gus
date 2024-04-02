@@ -40,15 +40,15 @@
 .memoScreen {
   /* start with memo hidden */
   display: none;
-  
+
 }
 
-.stickynote {
+.stinkButtStickyNote {
   width: 200px;
-  height: 80px;
+  height: 100px;
   position: absolute;
-  right: 5px;
-  bottom: -100px;
+  left: 305px;
+  top: 250px;
   border: 2px solid #000000;
   padding: 20px;
   line-height: 30px;
@@ -60,6 +60,12 @@
   font-weight: 400;
   line-height: 120%;
   font-style: normal;
+
+  /* Start hidden. */
+  display: none;
+
+  transition: all 1s ease;
+
 }
 
 .dolphinDoc {
@@ -101,7 +107,7 @@
 }
 
 .genericDoc {
-  
+
   /* text */
   line-height: 40px;
   letter-spacing: 10px;
@@ -188,7 +194,7 @@
   position: absolute;
   right: 70px;
   top: 135px;
-  
+
   font-size: 25px;
   font-family: 'Special Elite';
 }
@@ -230,7 +236,7 @@
 
   /* shape/size/location */
   width: 680px;
-  height: 385px;
+  height: 405px;
   position: absolute;
   left: 50px;
   top: 50px;
