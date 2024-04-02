@@ -276,8 +276,14 @@ for (const [start, end] of Object.entries(progression)) {
   });
 
 
-  $(`#${start} .next`).click(() => {
-    $(`#${start}`).hide();
-    $(`#${end}`).show();
-  });
+  if (end !== "") {
+    $(`#${start} .next`).click(() => {
+      $(`#${start}`).hide();
+      $(`#${end}`).show();
+    });
+  }
 }
+
+$("#website .next").click(() => {
+  endGame();
+});
