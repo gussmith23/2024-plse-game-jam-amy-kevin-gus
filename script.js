@@ -164,29 +164,26 @@ function stageStinkButt() {
 
   redact(2);
   redact(3);
-  redact(4);
   redact(7);
-  redact(8);
   redact(9);
   redact(10);
+  redact(11);
+  redact(12);
   redact(13);
   redact(14);
   redact(15);
+  redact(16);
+  redact(17);
   redact(18);
-  redact(19);
-  redact(20);
   redact(21);
   redact(22);
   redact(23);
-  redact(26);
+  redact(24);
   redact(27);
   redact(28);
   redact(29);
-  redact(32);
-  redact(33);
-  redact(34);
-  redact(35);
-  redact(36);
+  redact(30);
+  redact(31);
 
 }
 
