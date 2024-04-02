@@ -7,7 +7,9 @@ var stampAudio = new Audio('stamp.m4a');
 var currentCompleted = true;
 
 var progression = {
-  "soviet": "dolphin"
+  "soviet": "hardware",
+  "hardware": "website",
+  "website": "dolphin",
 }
 
 for (const [start, end] of Object.entries(progression)) {
@@ -65,6 +67,8 @@ makeRedactable($(".stinkButtRedactable")[0]);
 // });
 
 makeRedactable($("#sovietRedactable")[0]);
+makeRedactable($("#hardwareRedactable")[0]);
+makeRedactable($("#websiteRedactable")[0]);
 
 $(".wordCanvas").click(function () {
 
@@ -114,6 +118,19 @@ function stamp() {
   stampAudio.play();
   $(".stamp").show();
 }
+
+
+// let isVisible = () => {
+//   console.log("lsfdjsjd")
+//   $(".profilePicture").show();
+// }
+//hookup the event
+// $('#website').bind('isVisible', isVisible);
+
+//show div and trigger custom event in callback when div is visible
+// $('#website').show('slow', function(){
+//     $(this).trigger('isVisible');
+// });
 
 $(".stinkButtDoc").click(function () {
   if ($(".stamp").css('display') != 'none') {
