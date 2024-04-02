@@ -1,198 +1,202 @@
 <html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Special+Elite&display=swap"
+      rel="stylesheet">
+  </head>
+  <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"
+    integrity="sha512-9ex1Kp3S7uKHVZmQ44o5qPV6PnP8/kYp8IpUHLDJ+GZ/qpKAqGgEEH7rhYlM4pTOSs/WyHtPubN2UePKTnTSww=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Special+Elite&display=swap"
-    rel="stylesheet">
-</head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"
-  integrity="sha512-9ex1Kp3S7uKHVZmQ44o5qPV6PnP8/kYp8IpUHLDJ+GZ/qpKAqGgEEH7rhYlM4pTOSs/WyHtPubN2UePKTnTSww=="
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="style.css">
-
-<body>
-  <!-- Represents the main window of the game. Everything should be in here. -->
-  <div class="gameWindow">
-    <!-- Represents the "main screen": the start screen, plus the documents that get
+  <body>
+    <!-- Represents the main window of the game. Everything should be in here. -->
+    <div class="gameWindow">
+      <!-- Represents the "main screen": the start screen, plus the documents that get
 overlayed. -->
-    <div class="mainScreen">
-      <div class="startButton"></div>
-      <button class="endButton">End Game
-      </button>
-    <!-- <div class="stampButton">Submit</div> -->
-    <div class="memoScreen">
-      <div class="memo">
-        <span style="font-family:ponderosa">--------------------------------------</span><br>
-        ************************** MEMO ***************************<br>
-        <span style="font-family:ponderosa">--------------------------------------</span><br>
+      <div class="mainScreen">
+        <div class="startButton"></div>
+        <button class="endButton">End Game</button>
+        <!-- <div class="stampButton">Submit</div> -->
+        <div class="memoScreen">
+          <div class="memo">
+            <span
+              style="font-family:ponderosa">--------------------------------------</span><br>
+            ************************** MEMO ***************************<br>
+            <span
+              style="font-family:ponderosa">--------------------------------------</span><br>
 
-        It's our annual spring redact-a-thon!<br>
-        Please make sure to finish redacting all leftover articles.<br>
-        Reminder that we enforce a rate of 80% words redacted!<br>
+            It's our annual spring redact-a-thon!<br>
+            Please make sure to finish redacting all leftover articles.<br>
+            Reminder that we enforce a rate of 80% words redacted!<br>
 
-        <div style="text-align:right;">- Manager</div>
+            <div style="text-align:right;">- Manager</div>
 
-      </div>
-    </div>
-
-    <div class="dolphinDoc" id="dolphin">
-      <!-- The stamp that'll be stamped onto the completed document -->
-      <div class="stamp">DECLASSIFED</div>
-
-      <div>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7
-        February 1964
-        <br>
-        <br>
-        MEMORANDUM FOR:<br>
-        &nbsp;&nbsp; Life Sciences Division
-        <br>
-        SUBJECT:<br>
-        &nbsp;&nbsp; Dolphins
-        <br>
-        <br>
-        &nbsp;&nbsp;
-        1. The
-        <span class="word">
-          <canvas class="wordCanvas"></canvas>
-          Maritime Branch</span>
-        of SOD is
-        extremely interested in the
-        proposed work
-        on the training of Dolphins.
-      </div>
-    </div>
-
-    <div class="stinkButtStickyNote">
-      Jessica &ndash; I am NOT a stink butt. Please reredact this and submit.<br>
-      <div style="text-align:right;">&mdash; Manager</div>
-      <br>
-      <div class="stinkButtStickyNoteButton" style="text-align:right;">>>></div>
-    </div>
-
-    <div class="stinkButtDoc">
-      <div class="stamp">DECLASSIFED</div>
-
-      <div>
-        MEMORANDUM FOR:<br>
-        &nbsp;&nbsp; Munitions Division
-        <br>
-        SUBJECT:<br>
-        &nbsp;&nbsp; Stink Bombs
-        <br>
-        <div class="stinkButtRedactable">
-          <br>
-          The new munitions requisitions
-          <br>
-          manager for the infantry division
-          <br>
-          is requesting agents distribute
-          <br>
-          a notice for users to disengage the
-          <br>
-          stink bombs before loading the
-          <br>
-          butt end of the injector apparatus.
+          </div>
         </div>
 
-        <button class="stinkButtUnredact">Print Fresh</button>
-        <button class="stinkButtSubmit">Submit</button>
-        <spana class="next" style="display:none;position:relative;left:350px">>>></span>
-      </div>
+        <div class="dolphinDoc" id="dolphin">
+          <!-- The stamp that'll be stamped onto the completed document -->
+          <div class="stamp">DECLASSIFED</div>
 
-      <div class="genericDoc" id="soviet" style="
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7
+            February 1964
+            <br>
+            <br>
+            MEMORANDUM FOR:<br>
+            &nbsp;&nbsp; Life Sciences Division
+            <br>
+            SUBJECT:<br>
+            &nbsp;&nbsp; Dolphins
+            <br>
+            <br>
+            &nbsp;&nbsp;
+            1. The
+            <span class="word">
+              <canvas class="wordCanvas"></canvas>
+              Maritime Branch</span>
+            of SOD is
+            extremely interested in the
+            proposed work
+            on the training of Dolphins.
+          </div>
+        </div>
+
+        <div class="stinkButtStickyNote">
+          Jessica &ndash; I am NOT a stink butt. Please reredact this and submit.<br>
+          <div style="text-align:right;">&mdash; Manager</div>
+          <br>
+          <div class="stinkButtStickyNoteButton"
+            style="text-align:right;">>>></div>
+        </div>
+
+        <div class="stinkButtDoc">
+          <div class="stamp">DECLASSIFED</div>
+
+          <div>
+            MEMORANDUM FOR:<br>
+            &nbsp;&nbsp; Munitions Division
+            <br>
+            SUBJECT:<br>
+            &nbsp;&nbsp; Stink Bombs
+            <br>
+            <div class="stinkButtRedactable">
+              <br>
+              The new munitions requisitions
+              <br>
+              manager for the infantry division
+              <br>
+              is requesting agents distribute
+              <br>
+              a notice for users to disengage the
+              <br>
+              stink bombs before loading the
+              <br>
+              butt end of the injector apparatus.
+            </div>
+
+            <button class="stinkButtUnredact">Print Fresh</button>
+            <button class="stinkButtSubmit">Submit</button>
+            <spana class="next" style="display:none;position:relative;left:350px">>>></span>
+          </div>
+        </div>
+        <div class="genericDoc" id="soviet" style="
         font-size: 19px;">
-        <div class="stamp">DECLASSIFED</div>
+          <div class="stamp">DECLASSIFED</div>
 
-        <div id="sovietRedactable">
-          Early messaging by the <br>
-          Soviets indicated the <br>
-          probe will
-          pass around the<br> moon and through the inner<br> solar system
-          towards the<br> vicinity of Uranus, but<br> there is
-          considerable<br> evidence
-          that it is not<br> approaching the expected<br> bodies and
-          performing as<br>
-          the Soviet scientists<br> announced.
-        </div>
+          <div id="sovietRedactable">
+            Early messaging by the <br>
+            Soviets indicated the <br>
+            probe will
+            pass around the<br> moon and through the inner<br> solar system
+            towards the<br> vicinity of Uranus, but<br> there is
+            considerable<br> evidence
+            that it is not<br> approaching the expected<br> bodies and
+            performing as<br>
+            the Soviet scientists<br> announced.
+          </div>
 
-        <button id="sovietUnredact">Print Fresh</button>
-        <button id="sovietSubmit">Submit</button>
-        <spana class="next" style="display:none;position:relative;left:350px">>>></span>
-      </div>
-
-
-      <div class="genericDoc" id="hardware" style="">
-        <div class="stamp">DECLASSIFED</div>
-
-        <div id="hardwareRedactable">
-          New regulations say we<br>
-          must condemn agents<br> should
-          they attempt to<br>
-          strip off and steal the<br> bespoke
-          screw or nail<br>
-          parts in military<br>
-          equipment to
-          service<br>
-          their personal firearms.<br>
-          We instead
-          encourage you<br> to peruse your local mom<br>
-          and pop
-          specialty<br>
-          hardware stores.
+          <button id="sovietUnredact">Print Fresh</button>
+          <button id="sovietSubmit">Submit</button>
+          <spana class="next" style="display:none;position:relative;left:350px">>>></span>
         </div>
 
 
-        <button id="hardwareUnredact">Print Fresh</button>
-        <button id="hardwareSubmit">Submit</button>
-        <spana class="next" style="display:none;position:relative;left:350px">>>></span>
-      </div>
+        <div class="genericDoc" id="hardware" style="">
+          <div class="stamp">DECLASSIFED</div>
 
+          <div id="hardwareRedactable">
+            New regulations say we<br> 
+            must condemn agents<br> should 
+            they attempt to<br>
+             strip off and steal the<br> bespoke 
+            screw or nail<br>
+             parts in military<br>
+             equipment to 
+            service<br> 
+            their personal firearms.<br>
+            We instead 
+            encourage you<br> to peruse your local mom<br>
+           and pop 
+            specialty<br> 
+            hardware stores.
+          </div>
 
-
-      <div class="genericDoc" id="website">
-        <div class="profilePicture">
-          <img src="profile.png">
+          
+          <button id="hardwareUnredact">Print Fresh</button>
+          <button id="hardwareSubmit">Submit</button>
+          <spana class="next" style="display:none;position:relative;left:350px">>>></span>
         </div>
 
-        <div class="stamp">DECLASSIFED</div>
-        <div id="websiteRedactable">
-          My goal is to help students
-          become great computer scientists.
-          In research, I work toward this
-          goal with my students in the UW
-          PLSE research group. In education,
-          I work toward this goal by teaching
+
+        
+
+
+        <div class="genericDoc" id="website">
+          <div class="profilePicture">
+            <img src="profile.png">
+          </div>
+
+            <div class="stamp">DECLASSIFED</div>
+          <div id="websiteRedactable">
+          My goal is to help students 
+          become great computer scientists. 
+          In research, I work toward this 
+          goal with my students in the UW 
+          PLSE research group. In education, 
+          I work toward this goal by teaching 
           courses on programming languages and
           related topics.
+          </div>
+          
+          <button id="websiteUnredact">Print Fresh</button>
+          <button id="websiteSubmit">Submit</button>
+          <spana class="next" style="display:none;position:relative;left:350px">>>></span>
         </div>
 
-        <button id="websiteUnredact">Print Fresh</button>
-        <button id="websiteSubmit">Submit</button>
-        <spana class="next" style="display:none;position:relative;left:350px">>>></span>
+      </div>
+
+      <!-- Represents the end screen. -->
+      <div class="endScreen">
+        <div class="endScreenCredits">
+          Gus Smith<br>
+          K<span class="word"><canvas class="wordCanvas"></canvas>evin
+          </span> Mu<br>
+          Amy Zhu
+        </div>
       </div>
 
     </div>
-  </div>
 
+  </body>
 
-  <!-- Represents the end screen. -->
-  <div class="endScreen">
-    <div class="endScreenCredits">
-      Gus Smith<br>
-      K<span class="word"><canvas class="wordCanvas"></canvas>evin
-      </span> Mu<br>
-      Amy Zhu
-    </div>
-  </div>
-
-  </div>
-
-</body>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </html>
