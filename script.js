@@ -10,17 +10,40 @@ var currentCompleted = true;
 var progression = {
   "soviet": "hardware",
   "hardware": "website",
-  "website": "dolphin",
+  // "website": "dolphin",
 }
 
+
 for (const [start, end] of Object.entries(progression)) {
-  $(`#${start}`).click(function () {
-    if ($(".stamp").css('display') != 'none') {
-      $(this).hide();
-      $(".stamp").hide();
-      $(`#${end}`).show();
-    }
+  // $(`#${start}`).click(function () {
+  //   if ($(".stamp").css('display') != 'none') {
+  //     $(this).hide();
+  //     $(".stamp").hide();
+  //     $(`#${end}`).show();
+  //   }
+  // })
+  
+  $(`#${start}Submit`).attr("disabled", true);
+  $(`#${start}Submit`).click(() => stampDoc($(`#${start}`)));
+
+  
+  $(`#${start} .wordCanvas`).click(function () {
+    let total = $(`#${start} .wordCanvas`).length;
+    let redacted = $(`#${start} [redacted=true]`).length;
+    console.log('hello')
+
+    if (redacted / total > 0.01) {
+      console.log('remove')
+
+      $(`#${start}Submit`).attr("disabled", false);
+    }  
   })
+  
+
+  $(`#${start} .next`).click(() => {
+    $(`#${start}`).hide();
+    $(`#${end}`).show();
+  });
 }
 
 $(".startButton").click(function () {
@@ -72,7 +95,7 @@ makeRedactable($("#hardwareRedactable")[0]);
 makeRedactable($("#websiteRedactable")[0]);
 
 $(".wordCanvas").click(function () {
-
+  $(this).attr("redacted", true);
   redactAudio.play();
 
 
@@ -201,6 +224,9 @@ function unredactAll(element) {
   $(element).find(".wordCanvas").each(function () {
     const ctx = $(this)[0].getContext("2d");
     ctx.clearRect(0, 0, $(this)[0].width, $(this)[0].height);
+
+    // todo something like this to reset the submit button after a re-redact
+  // $(element).find("button").attr("disabled", true);
   });
 }
 
