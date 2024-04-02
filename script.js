@@ -10,9 +10,9 @@ var currentCompleted = true;
 const MIN_REDACTS = 0.3;
 
 var progression = {
-  "soviet": "website",
-  "website": "hygiene",
-  "hygiene": "hardware",
+  "soviet": "hygiene",
+  "hygiene": "website",
+  "website": "hardware",
   "hardware": "babysit",
   "babysit": "",
   // "website": "dolphin",
