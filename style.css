@@ -62,10 +62,10 @@ button.disabled {
 
 .memo {
   width: 500px;
-  height: 300px;
+  height: 176px;
   position: absolute;
-  left: 100px;
-  top: 100px;
+  left: 125px;
+  top: 197px;
   border: 2px solid #000000;
   padding: 20px;
   line-height: 40px;
@@ -266,14 +266,14 @@ button.disabled {
   /* text */
   line-height: 35px;
   letter-spacing: 4px;
-  font-size: 18px;
+  font-size: 17px;
   font-family: 'ponderosa';
   color: #000000;
 
 
   /* shape/size/location */
   width: 680px;
-  height: 405px;
+  height: 376px;
   position: absolute;
   left: 50px;
   top: 50px;
