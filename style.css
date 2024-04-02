@@ -47,7 +47,7 @@ button {
 button.disabled {
   min-height: 20px;
   min-width: 59px;
-  text-align:center;
+  text-align: center;
   background: #bbbbbb;
   border-style: solid;
   border-width: 5.5px;
@@ -147,8 +147,8 @@ button.disabled {
 .genericDoc {
 
   /* text */
-  line-height: 40px;
-  letter-spacing: 10px;
+  line-height: 38px;
+  letter-spacing: 9px;
   font-size: 20px;
   font-family: 'ponderosa';
   color: #000000;
