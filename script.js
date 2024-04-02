@@ -233,7 +233,11 @@ function stampDoc(doc) {
   $(doc).find(".next").show();
 }
 
-$(".stinkButtSubmit").click(() => stampDoc($(".stinkButtDoc")));
+$(".stinkButtSubmit").click(function () {
+  if (!$(this).hasClass("disabled")) {
+    stampDoc($(".stinkButtDoc"));
+  }
+});
 
 $(".stinkButtDoc .next").click(() => {
   $(".stinkButtDoc").hide();
@@ -247,8 +251,10 @@ $(".stinkButtDoc .next").click(() => {
 for (const [start, end] of Object.entries(progression)) {
   
   $(`#${start}Submit`).addClass("disabled");
-  $(`#${start}Submit`).click(() => {
-    stampDoc($(`#${start}`))
+  $(`#${start}Submit`).click(function () {
+    if (!$(this).hasClass("disabled")) {
+      stampDoc($(`#${start}`));
+    }
   });
 
   $(`#${start} .wordCanvas`).on('click', function () {
