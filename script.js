@@ -7,43 +7,12 @@ var stampAudio = new Audio('stamp.m4a');
 var paperAudio = new Audio('paper.mp3');
 var currentCompleted = true;
 
+const MIN_REDACTS = 0.01;
+
 var progression = {
   "soviet": "hardware",
   "hardware": "website",
   // "website": "dolphin",
-}
-
-
-for (const [start, end] of Object.entries(progression)) {
-  // $(`#${start}`).click(function () {
-  //   if ($(".stamp").css('display') != 'none') {
-  //     $(this).hide();
-  //     $(".stamp").hide();
-  //     $(`#${end}`).show();
-  //   }
-  // })
-  
-  $(`#${start}Submit`).attr("disabled", true);
-  $(`#${start}Submit`).click(() => stampDoc($(`#${start}`)));
-
-  
-  $(`#${start} .wordCanvas`).click(function () {
-    let total = $(`#${start} .wordCanvas`).length;
-    let redacted = $(`#${start} [redacted=true]`).length;
-    console.log('hello')
-
-    if (redacted / total > 0.01) {
-      console.log('remove')
-
-      $(`#${start}Submit`).attr("disabled", false);
-    }  
-  })
-  
-
-  $(`#${start} .next`).click(() => {
-    $(`#${start}`).hide();
-    $(`#${end}`).show();
-  });
 }
 
 $(".startButton").click(function () {
@@ -94,7 +63,7 @@ makeRedactable($("#sovietRedactable")[0]);
 makeRedactable($("#hardwareRedactable")[0]);
 makeRedactable($("#websiteRedactable")[0]);
 
-$(".wordCanvas").click(function () {
+$(".wordCanvas").on('click', function () {
   $(this).attr("redacted", true);
   redactAudio.play();
 
@@ -214,7 +183,22 @@ function stageStinkButt() {
 
 }
 
-$(".stinkButtUnredact").click(() => trash($(".stinkButtDoc")));
+$(".stinkButtUnredact").click(() => {
+  trash($(".stinkButtDoc"));
+  $(".stinkButtSubmit").addClass("disabled");
+  
+  $(`.stinkButtDoc .wordCanvas`).on('click', function () {
+    let total = $(`.stinkButtDoc .wordCanvas`).length;
+    let redacted = $(`.stinkButtDoc [redacted=true]`).length;
+
+    if (redacted / total > MIN_REDACTS) {
+
+      $(`.stinkButtSubmit`).removeClass("disabled");
+    }  
+  })
+  // add hooks 
+
+});
 
 // Unredact everything under the given element.
 function unredactAll(element) {
@@ -255,3 +239,35 @@ $(".stinkButtDoc .next").click(() => {
   $(".stinkButtStickyNote").hide();
   $("#soviet").show();
 });
+
+
+
+
+for (const [start, end] of Object.entries(progression)) {
+  
+  $(`#${start}Submit`).addClass("disabled");
+  $(`#${start}Submit`).click(() => {
+    stampDoc($(`#${start}`))
+  });
+
+  $(`#${start} .wordCanvas`).on('click', function () {
+    let total = $(`#${start} .wordCanvas`).length;
+    let redacted = $(`#${start} [redacted=true]`).length;
+
+    if (redacted / total > MIN_REDACTS) {
+
+      $(`#${start}Submit`).removeClass("disabled");
+    }  
+  })
+
+  $(`#${start}Unredact`).click(() => {
+    $(`#${start}Submit`).addClass("disabled");
+    trash($(`#${start}`))
+  });
+  
+
+  $(`#${start} .next`).click(() => {
+    $(`#${start}`).hide();
+    $(`#${end}`).show();
+  });
+}
