@@ -101,6 +101,7 @@ $(".memoScreen").click(function () {
 function endGame() {
   $(".mainScreen").hide();
   $(".mainScreen").children().hide();
+  // $(".gameWindow").hide();
   $(".endScreen").show();
 }
 

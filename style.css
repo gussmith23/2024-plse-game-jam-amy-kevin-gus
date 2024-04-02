@@ -228,8 +228,8 @@ button.disabled {
 .endScreenCredits {
   width: 200px;
   height: 100px;
-  position: absolute;
-  right: 70px;
+  position: relative;
+  left: 515px;
   top: 135px;
 
   font-size: 25px;
