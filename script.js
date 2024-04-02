@@ -2,7 +2,7 @@
 //   $(this).toggleClass('redacted');
 // });
 
-var redactAudio = new Audio('scribble1.m4a');
+var redactSounds = [new Audio('sound5.wav'), new Audio('sound7.wav'), new Audio('sound11.wav')];
 var stampAudio = new Audio('stamp.m4a');
 var paperAudio = new Audio('paper.mp3');
 var currentCompleted = true;
@@ -65,8 +65,9 @@ makeRedactable($("#websiteRedactable")[0]);
 
 $(".wordCanvas").on('click', function () {
   $(this).attr("redacted", true);
-  redactAudio.play();
 
+  // Play random redact sound.
+  redactSounds[Math.floor(Math.random() * redactSounds.length)].play();
 
   // As long as we're setting the canvas width/height to a percentage from css,
   // the canvas is stretched, which makes height/width less meaningful.
@@ -187,7 +188,7 @@ function stageStinkButt() {
 $(".stinkButtUnredact").click(() => {
   trash($(".stinkButtDoc"));
   $(".stinkButtSubmit").addClass("disabled");
-  
+
   $(`.stinkButtDoc .wordCanvas`).on('click', function () {
     let total = $(`.stinkButtDoc .wordCanvas`).length;
     let redacted = $(`.stinkButtDoc [redacted=true]`).length;
@@ -195,7 +196,7 @@ $(".stinkButtUnredact").click(() => {
     if (redacted / total > MIN_REDACTS) {
 
       $(`.stinkButtSubmit`).removeClass("disabled");
-    }  
+    }
   })
   // add hooks 
 
@@ -211,7 +212,7 @@ function unredactAll(element) {
     ctx.clearRect(0, 0, $(this)[0].width, $(this)[0].height);
 
     // todo something like this to reset the submit button after a re-redact
-  // $(element).find("button").attr("disabled", true);
+    // $(element).find("button").attr("disabled", true);
   });
 }
 
@@ -249,7 +250,7 @@ $(".stinkButtDoc .next").click(() => {
 
 
 for (const [start, end] of Object.entries(progression)) {
-  
+
   $(`#${start}Submit`).addClass("disabled");
   $(`#${start}Submit`).click(function () {
     if (!$(this).hasClass("disabled")) {
@@ -264,14 +265,14 @@ for (const [start, end] of Object.entries(progression)) {
     if (redacted / total > MIN_REDACTS) {
 
       $(`#${start}Submit`).removeClass("disabled");
-    }  
+    }
   })
 
   $(`#${start}Unredact`).click(() => {
     $(`#${start}Submit`).addClass("disabled");
     trash($(`#${start}`))
   });
-  
+
 
   $(`#${start} .next`).click(() => {
     $(`#${start}`).hide();
