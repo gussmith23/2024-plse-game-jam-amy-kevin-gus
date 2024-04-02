@@ -7,7 +7,7 @@ var stampAudio = new Audio('stamp.m4a');
 var paperAudio = new Audio('paper.mp3');
 var currentCompleted = true;
 
-const MIN_REDACTS = 0.01;
+const MIN_REDACTS = 0.8;
 
 var progression = {
   "soviet": "website",
