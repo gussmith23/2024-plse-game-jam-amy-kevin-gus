@@ -11,7 +11,10 @@ const MIN_REDACTS = 0.01;
 
 var progression = {
   "soviet": "hardware",
-  "hardware": "website",
+  "hardware": "hygiene",
+  "hygiene": "babysit",
+  "babysit": "website",
+  "website": "",
   // "website": "dolphin",
 }
 
@@ -62,6 +65,8 @@ makeRedactable($(".stinkButtRedactable")[0]);
 makeRedactable($("#sovietRedactable")[0]);
 makeRedactable($("#hardwareRedactable")[0]);
 makeRedactable($("#websiteRedactable")[0]);
+makeRedactable($("#hygieneRedactable")[0]);
+makeRedactable($("#babysitRedactable")[0]); // todo add this to iterate
 
 $(".wordCanvas").on('click', function () {
   $(this).attr("redacted", true);
