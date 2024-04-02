@@ -285,3 +285,7 @@ button.disabled {
   /* start with page hidden */
   display: none;
 }
+
+.endButton {
+  display: none;
+}
