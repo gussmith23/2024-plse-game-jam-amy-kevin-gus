@@ -45,7 +45,7 @@
 
 .stinkButtStickyNote {
   width: 200px;
-  height: 80px;
+  height: 100px;
   position: absolute;
   left: 305px;
   top: 250px;
@@ -223,7 +223,7 @@
 
   /* shape/size/location */
   width: 680px;
-  height: 385px;
+  height: 405px;
   position: absolute;
   left: 50px;
   top: 50px;

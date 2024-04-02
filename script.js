@@ -23,8 +23,7 @@ for (const [start, end] of Object.entries(progression)) {
 
 $(".startButton").click(function () {
   $(this).hide();
-  stageShowNoteFromManager();
-  // $(".memoScreen").show();
+  $(".memoScreen").show();
   // $(".page").show();
 });
 
@@ -100,8 +99,7 @@ $(".wordCanvas").click(function () {
 
 $(".memoScreen").click(function () {
   $(".memo").hide();
-  // $(".dolphinDoc").show();
-  $(".stinkButtDoc").show();
+  stageShowNoteFromManager();
 });
 
 function endGame() {
@@ -200,3 +198,17 @@ function trash(element) {
     $(element).css('top', oldTop);
   }, 250);
 }
+
+function stampDoc(doc) {
+  stampAudio.play();
+  $(doc).find(".stamp").show();
+  $(doc).find(".next").show();
+}
+
+$(".stinkButtSubmit").click(() => stampDoc($(".stinkButtDoc")));
+
+$(".stinkButtDoc .next").click(() => {
+  $(".stinkButtDoc").hide();
+  $(".stinkButtStickyNote").hide();
+  $("#soviet").show();
+});
