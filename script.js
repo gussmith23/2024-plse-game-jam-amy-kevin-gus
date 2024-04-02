@@ -4,6 +4,7 @@
 
 var redactAudio = new Audio('scribble1.m4a');
 var stampAudio = new Audio('stamp.m4a');
+var paperAudio = new Audio('paper.mp3');
 var currentCompleted = true;
 
 var progression = {
@@ -190,11 +191,12 @@ function unredactAll(element) {
 
 // "Trash" an element and make it reappear.
 function trash(element) {
+  paperAudio.play();
   const oldTop = $(element).css('top');
-  $(element).css('transition', 'top 1s ease');
-  $(element).css('top', '10000px');
+  $(element).css('transition', 'top .25s ease');
+  $(element).css('top', '2000px');
   setTimeout(() => {
     unredactAll(element);
     $(element).css('top', oldTop);
-  }, 1000);
+  }, 250);
 }
